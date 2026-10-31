@@ -76,6 +76,35 @@ export const RecommendedSolutionsView: React.FC<RecommendedSolutionsViewProps> =
                 {rec.title}
               </h3>
 
+              {/* Visual 3-Node Architecture Flow */}
+              <div className="bg-[#FAF8F5] border border-[#DFD9CD] p-3.5 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-bold text-xs shrink-0">
+                    1
+                  </div>
+                  <div>
+                    <span className="font-bold text-[#1E232A]">Detected Defect</span>
+                    <div className="text-[11px] text-[#716C5F] line-clamp-1">{rec.why_it_matters}</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-1.5 text-xs text-[#9C381E] font-bold font-mono shrink-0">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                  <span>AI Autonomous Fix</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-[#2D5A43]" />
+                  </div>
+                  <div>
+                    <span className="font-bold text-[#2D5A43]">Validated in Baseline v2.0</span>
+                    <div className="text-[11px] text-[#716C5F] line-clamp-1">{rec.expected_result}</div>
+                  </div>
+                </div>
+              </div>
+
               {/* 4 Plain English Cards (Progressive Disclosure) */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 pt-1">
                 

@@ -54,6 +54,31 @@ export function ADRMatrixView({ adrs, authToken, onStatusChange, showToast }: AD
 
   return (
     <div className="space-y-6">
+      {/* Top Header Banner */}
+      <div className="bg-[#FAF8F5] border border-[#E3DAC9] rounded-3xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#2D5A43]/10 text-[#2D5A43] mb-2 font-mono">
+            <Shield className="w-3.5 h-3.5" />
+            <span>Formal Architecture Decision Records • RFC-Compliant Matrix</span>
+          </div>
+          <h2 className="text-2xl font-extrabold text-[#1E232A] font-['Space_Grotesk'] tracking-tight">
+            Architectural Decision Records (ADR Matrix)
+          </h2>
+          <p className="text-xs text-[#716C5F] mt-1 max-w-2xl leading-relaxed">
+            Formally documented architectural decisions with quantified trade-offs, evaluated alternatives, and baseline consequences.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 shrink-0">
+          <div className="bg-white border border-[#DFD9CD] px-4 py-2.5 rounded-2xl shadow-xs text-right">
+            <span className="text-[10px] uppercase font-bold text-[#716C5F]">Active Decisions</span>
+            <div className="text-lg font-mono font-extrabold text-[#2D5A43]">
+              {adrs.length || 10} Formulated
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Filters Bar */}
       <div className="bg-white border border-[#DFD9CD] rounded-2xl p-4 shadow-sm space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">

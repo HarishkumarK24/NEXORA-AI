@@ -3,6 +3,7 @@ import {
   Sparkles, UploadCloud, FileText, ArrowRight, Zap, CheckCircle2, 
   Layers, Cpu, Shield, RefreshCw, Clock, ArrowUpRight, Check, AlertTriangle
 } from 'lucide-react';
+import { VisualDocumentProcessing } from './VisualStoryComponents';
 
 interface LandingHomePageProps {
   onStartAnalysis: (projectName: string, projectDesc: string, reqText: string, files: File[]) => Promise<void>;
@@ -156,6 +157,9 @@ export const LandingHomePage: React.FC<LandingHomePageProps> = ({
               Load E-Commerce Hackathon Test Scenario
             </button>
           </div>
+
+          {/* Document Intelligence Ingestion Visual */}
+          <VisualDocumentProcessing />
 
           {/* Text Input Area */}
           {inputMode === 'text' && (

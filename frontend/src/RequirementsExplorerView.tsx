@@ -89,6 +89,30 @@ export const RequirementsExplorerView: React.FC<RequirementsExplorerViewProps> =
         </div>
       </div>
 
+      {/* Visual Category Distribution Bar */}
+      <div className="bg-white border border-[#DFD9CD] rounded-2xl p-4 shadow-xs space-y-2">
+        <div className="flex items-center justify-between text-xs font-mono font-bold">
+          <span className="text-[#1E232A]">Requirements Category Coverage</span>
+          <span className="text-[#2D5A43]">9 Engineering Dimensions Active</span>
+        </div>
+        <div className="w-full h-3 bg-[#FAF8F5] rounded-full overflow-hidden flex border border-[#DFD9CD]">
+          <div style={{ width: '35%' }} className="bg-[#9C381E] h-full" title="Functional (35%)" />
+          <div style={{ width: '18%' }} className="bg-[#E06D3B] h-full" title="Security (18%)" />
+          <div style={{ width: '15%' }} className="bg-[#2D5A43] h-full" title="Performance (15%)" />
+          <div style={{ width: '12%' }} className="bg-blue-600 h-full" title="Reliability (12%)" />
+          <div style={{ width: '10%' }} className="bg-purple-600 h-full" title="Compliance (10%)" />
+          <div style={{ width: '10%' }} className="bg-amber-600 h-full" title="Integration (10%)" />
+        </div>
+        <div className="flex flex-wrap items-center gap-3 text-[10px] font-mono text-[#716C5F] pt-1">
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#9C381E]" /> Functional (35%)</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#E06D3B]" /> Security (18%)</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-[#2D5A43]" /> Performance (15%)</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-blue-600" /> Reliability (12%)</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-purple-600" /> Compliance (10%)</span>
+          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-600" /> Integration (10%)</span>
+        </div>
+      </div>
+
       {/* Filter and Search Bar */}
       <div className="bg-white border border-[#DFD9CD] rounded-3xl p-5 shadow-sm space-y-4">
         

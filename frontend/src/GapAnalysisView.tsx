@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { 
   AlertTriangle, CheckCircle2, ChevronDown, ChevronUp, Shield, Sparkles, Filter, Info
 } from 'lucide-react';
+import { VisualConflictDiagram } from './VisualStoryComponents';
 
 interface GapAnalysisViewProps {
   issues: any[];
@@ -62,6 +63,9 @@ export const GapAnalysisView: React.FC<GapAnalysisViewProps> = ({ issues }) => {
           </div>
         </div>
       </div>
+
+      {/* Visual Conflict Resolution Diagram */}
+      <VisualConflictDiagram />
 
       {/* Filters Bar */}
       <div className="bg-white border border-[#DFD9CD] rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-3">

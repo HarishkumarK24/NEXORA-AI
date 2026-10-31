@@ -46,6 +46,9 @@ export default function App() {
   const [isExecutingOverlay, setIsExecutingOverlay] = useState(false);
   const [executingProjectName, setExecutingProjectName] = useState('OmniCommerce Enterprise Platform');
   const [customStressPrompt, setCustomStressPrompt] = useState('');
+  const [hasUnlockedRemaining, setHasUnlockedRemaining] = useState<boolean>(() => {
+    return sessionStorage.getItem('nexora_unlocked_remaining') === 'true';
+  });
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -102,6 +105,8 @@ export default function App() {
   ) => {
     if (!authToken) return;
     setExecutingProjectName(name);
+    setHasUnlockedRemaining(false);
+    sessionStorage.removeItem('nexora_unlocked_remaining');
     setIsExecutingOverlay(true);
 
     try {
@@ -148,6 +153,8 @@ export default function App() {
 
   const handleOverlayComplete = () => {
     setIsExecutingOverlay(false);
+    setHasUnlockedRemaining(false);
+    sessionStorage.removeItem('nexora_unlocked_remaining');
     setActiveTab('final_results');
     showToast('Autonomous Analysis Complete! Architecture generated, improved & validated.');
   };
@@ -215,22 +222,28 @@ export default function App() {
 
         {/* Unified Navigation Tabs */}
         <nav className="flex items-center gap-1 bg-[#EFECE4] p-1.5 rounded-2xl border border-[#DFD9CD] overflow-x-auto max-w-[calc(100vw-420px)]">
-          {[
-            { id: 'home', label: 'Start Analysis', icon: Sparkles },
-            { id: 'final_results', label: 'Final Results', icon: Award, highlight: true },
-            { id: 'overview', label: 'Overview', icon: Workflow },
-            { id: 'requirements', label: 'Requirements Explorer', icon: CheckCircle2, badge: projectData?.requirements?.length },
-            { id: 'gaps', label: 'Gap Analysis', icon: AlertTriangle, badge: projectData?.issues?.length },
-            { id: 'solutions', label: 'Recommended Solutions', icon: Sparkles, badge: projectData?.recommendations?.length },
-            { id: 'impact', label: 'Impact Comparison', icon: Zap },
-            { id: 'architecture', label: 'Architecture Blueprint', icon: Cpu },
-            { id: 'adrs', label: 'Decisions (ADRs)', icon: Code2, badge: projectData?.adrs?.length || 10 },
-            { id: 'dependency', label: 'Dependency Map', icon: Layers },
-            { id: 'validation', label: 'Validation Report', icon: CheckCircle2 },
-            { id: 'history', label: 'Analysis History', icon: GitCommit, badge: projectData?.version_history?.length },
-            { id: 'stress_lab', label: 'Stress Lab', icon: Zap },
-            { id: 'change_impact', label: 'Change Impact', icon: TrendingUp }
-          ].map((tab) => {
+          {(activeTab === 'final_results' && !hasUnlockedRemaining
+            ? [
+                { id: 'home', label: 'Start Analysis', icon: Sparkles },
+                { id: 'final_results', label: 'Final Results', icon: Award, highlight: true }
+              ]
+            : [
+                { id: 'home', label: 'Start Analysis', icon: Sparkles },
+                { id: 'final_results', label: 'Final Results', icon: Award, highlight: true },
+                { id: 'overview', label: 'Overview', icon: Workflow },
+                { id: 'requirements', label: 'Requirements Explorer', icon: CheckCircle2, badge: projectData?.requirements?.length },
+                { id: 'gaps', label: 'Gap Analysis', icon: AlertTriangle, badge: projectData?.issues?.length },
+                { id: 'solutions', label: 'Recommended Solutions', icon: Sparkles, badge: projectData?.recommendations?.length },
+                { id: 'impact', label: 'Impact Comparison', icon: Zap },
+                { id: 'architecture', label: 'Architecture Blueprint', icon: Cpu },
+                { id: 'adrs', label: 'Decisions (ADRs)', icon: Code2, badge: projectData?.adrs?.length || 10 },
+                { id: 'dependency', label: 'Dependency Map', icon: Layers },
+                { id: 'validation', label: 'Validation Report', icon: CheckCircle2 },
+                { id: 'history', label: 'Analysis History', icon: GitCommit, badge: projectData?.version_history?.length },
+                { id: 'stress_lab', label: 'Stress Lab', icon: Zap },
+                { id: 'change_impact', label: 'Change Impact', icon: TrendingUp }
+              ]
+          ).map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
             return (
@@ -299,8 +312,22 @@ export default function App() {
               {activeTab === 'final_results' && (
                 <FinalAutonomousResultsPage 
                   projectData={projectData} 
-                  onExploreSection={(sec) => setActiveTab(sec as any)}
-                  onStartNew={() => setActiveTab('home')}
+                  onExploreSection={(sec) => {
+                    setHasUnlockedRemaining(true);
+                    sessionStorage.setItem('nexora_unlocked_remaining', 'true');
+                    setActiveTab(sec as any);
+                  }}
+                  onStartNew={() => {
+                    setHasUnlockedRemaining(false);
+                    sessionStorage.removeItem('nexora_unlocked_remaining');
+                    setActiveTab('home');
+                  }}
+                  hasUnlockedRemaining={hasUnlockedRemaining}
+                  onUnlockRemaining={() => {
+                    setHasUnlockedRemaining(true);
+                    sessionStorage.setItem('nexora_unlocked_remaining', 'true');
+                    showToast('Detailed architecture exploration unlocked!');
+                  }}
                 />
               )}
 
