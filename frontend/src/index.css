@@ -44,3 +44,101 @@ code, pre, .font-mono {
 .animate-fade-in {
   animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* 🌟 GIF-LIKE MICRO-ANIMATIONS 🌟 */
+@keyframes scanline {
+  0% { top: 0%; opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: 95%; opacity: 0; }
+}
+
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes radarPing {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.85; filter: drop-shadow(0 0 2px rgba(224, 109, 59, 0.4)); }
+  50% { transform: scale(1.05); opacity: 1; filter: drop-shadow(0 0 10px rgba(224, 109, 59, 0.65)); }
+}
+
+@keyframes dataFlow {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes ledBlinkSlow {
+  0%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
+}
+
+@keyframes ledBlinkFast {
+  0%, 100% { opacity: 0.2; }
+  25% { opacity: 1; }
+  50% { opacity: 0.3; }
+  75% { opacity: 0.95; }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes particleDrift {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.3; }
+  50% { transform: translate(10px, -15px) scale(1.1); opacity: 0.9; }
+  100% { transform: translate(-8px, -30px) scale(0.6); opacity: 0; }
+}
+
+.animate-scanline {
+  animation: scanline 2.2s ease-in-out infinite;
+}
+
+.animate-radar-sweep {
+  animation: radarSweep 3s linear infinite;
+  transform-origin: center center;
+}
+
+.animate-radar-ping {
+  animation: radarPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.animate-data-flow {
+  animation: dataFlow 1.6s ease-in-out infinite;
+}
+
+.animate-float-gentle {
+  animation: floatGentle 3s ease-in-out infinite;
+}
+
+.animate-led-slow {
+  animation: ledBlinkSlow 1.4s ease-in-out infinite;
+}
+
+.animate-led-fast {
+  animation: ledBlinkFast 0.8s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbitSpin 10s linear infinite;
+}
+
+.animate-particle-drift {
+  animation: particleDrift 2.8s ease-out infinite;
+}

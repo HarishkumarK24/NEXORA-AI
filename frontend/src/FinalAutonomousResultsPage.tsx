@@ -12,7 +12,10 @@ import {
   VisualSecurityArchitecture, 
   VisualScalabilityDiagram, 
   VisualReliabilityRecovery,
-  VisualDocumentProcessing
+  VisualDocumentProcessing,
+  GifLikeRadarGapDetector,
+  GifLikeServerCluster,
+  GifLikeSecurityShield
 } from './VisualStoryComponents';
 
 interface FinalAutonomousResultsPageProps {
@@ -225,6 +228,11 @@ export const FinalAutonomousResultsPage: React.FC<FinalAutonomousResultsPageProp
                 </p>
               </div>
 
+              {/* Live Animated Radar Gap Detector (GIF-like micro-animation) */}
+              <div className="pt-1">
+                <GifLikeRadarGapDetector />
+              </div>
+
             </div>
           </div>
 
@@ -285,6 +293,11 @@ export const FinalAutonomousResultsPage: React.FC<FinalAutonomousResultsPageProp
                 <p className="text-[11px] text-[#5C574C]">
                   100% of requirements map to architecture microservices and ADR records with zero unhandled critical failure modes.
                 </p>
+              </div>
+
+              {/* Live Animated Server Blade Cluster (GIF-like micro-animation) */}
+              <div className="pt-1">
+                <GifLikeServerCluster />
               </div>
 
             </div>

@@ -357,3 +357,293 @@ export const VisualDocumentProcessing: React.FC = () => {
     </div>
   );
 };
+
+/**
+ * GIF-LIKE MICRO-ANIMATION 1: Live Laser Document Scanner
+ * Features sweeping neon laser beam, blinking optical LEDs, drifting extracted tokens, and real-time token telemetry.
+ */
+export const GifLikeDocumentScanner: React.FC<{ isScanning?: boolean; className?: string }> = ({ 
+  isScanning = true, 
+  className = '' 
+}) => {
+  return (
+    <div className={`relative bg-[#1A1F26] border border-[#2D3748] rounded-2xl p-4 shadow-xl overflow-hidden ${className}`}>
+      {/* Top Console Bar */}
+      <div className="flex items-center justify-between pb-3 border-b border-gray-800 text-[10px] font-mono">
+        <div className="flex items-center gap-2 text-gray-300">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E06D3B] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E06D3B]"></span>
+          </span>
+          <span className="font-bold text-[#E06D3B] tracking-wider uppercase">AI OPTICAL DOCUMENT SCANNER</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-gray-400">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+          <span>48 TOKENS/SEC</span>
+        </div>
+      </div>
+
+      {/* Document Scanner Bed */}
+      <div className="relative mt-3 bg-[#0F1318] rounded-xl p-4 border border-gray-800/80 min-h-[140px] overflow-hidden flex flex-col justify-between">
+        
+        {/* Sweeping Laser Beam (GIF-like continuous scan) */}
+        {isScanning && (
+          <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#E06D3B] to-transparent shadow-[0_0_15px_#E06D3B,0_0_30px_#9C381E] z-20 pointer-events-none animate-scanline">
+            {/* Laser Focal Dot */}
+            <div className="absolute left-1/2 -top-1 w-3 h-3 bg-white rounded-full shadow-[0_0_8px_#ffffff] transform -translate-x-1/2"></div>
+          </div>
+        )}
+
+        {/* Simulated Document Lines */}
+        <div className="space-y-2 opacity-60 z-10">
+          <div className="h-2 w-3/4 bg-gray-600 rounded"></div>
+          <div className="h-2 w-5/6 bg-gray-700 rounded"></div>
+          <div className="h-2 w-2/3 bg-gray-600 rounded"></div>
+          <div className="h-2 w-4/5 bg-gray-700 rounded"></div>
+          <div className="h-2 w-1/2 bg-gray-600 rounded"></div>
+        </div>
+
+        {/* Floating Extracted Tokens (GIF-like animated drift) */}
+        <div className="absolute inset-0 z-15 pointer-events-none p-3 flex flex-wrap gap-2 items-center justify-around">
+          <span className="px-2 py-0.5 rounded-md text-[9px] font-mono font-bold bg-[#E06D3B]/20 text-[#E06D3B] border border-[#E06D3B]/40 animate-float-gentle shadow-xs">
+            🏷️ 10,000 CONCURRENCY
+          </span>
+          <span className="px-2 py-0.5 rounded-md text-[9px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 animate-float-gentle [animation-delay:0.8s] shadow-xs">
+            🔒 PII AES-256 GCM
+          </span>
+          <span className="px-2 py-0.5 rounded-md text-[9px] font-mono font-bold bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 animate-float-gentle [animation-delay:1.6s] shadow-xs">
+            ⚡ REDIS DISTRIBUTED LOCK
+          </span>
+          <span className="px-2 py-0.5 rounded-md text-[9px] font-mono font-bold bg-purple-500/20 text-purple-400 border border-purple-500/40 animate-float-gentle [animation-delay:2.2s] shadow-xs">
+            🛡️ IDEMPOTENCY KEY
+          </span>
+        </div>
+
+        {/* Telemetry Footer */}
+        <div className="flex items-center justify-between pt-2 border-t border-gray-800/80 text-[9px] font-mono text-gray-400 z-10">
+          <span>PARSED: 9 DIMENSIONS</span>
+          <span className="text-emerald-400 font-bold">ACCURACY: 99.4%</span>
+          <span>FORMAT: MULTI-FILE STREAM</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * GIF-LIKE MICRO-ANIMATION 2: High-Tech Radar Gap Detector
+ * Features rotating circular radar sweep line, pinging red/amber gap blips, and target coordinate readouts.
+ */
+export const GifLikeRadarGapDetector: React.FC<{ className?: string }> = ({ className = '' }) => {
+  return (
+    <div className={`relative bg-[#0F141C] border border-[#232F3E] rounded-2xl p-4 shadow-xl overflow-hidden ${className}`}>
+      {/* Console Header */}
+      <div className="flex items-center justify-between pb-2 border-b border-[#232F3E] text-[10px] font-mono">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-red-500 animate-led-fast"></span>
+          <span className="font-bold text-red-400 tracking-wider">RADAR GAP & RISK DETECTOR</span>
+        </div>
+        <span className="text-cyan-400 font-mono text-[9px]">SWEEP: 360° CONT</span>
+      </div>
+
+      {/* Radar Screen Area */}
+      <div className="relative mt-3 w-full aspect-square max-w-[200px] mx-auto rounded-full bg-[#080D14] border-2 border-cyan-900/60 flex items-center justify-center overflow-hidden shadow-[inset_0_0_20px_rgba(6,182,212,0.15)]">
+        
+        {/* Concentric Distance Rings */}
+        <div className="absolute w-3/4 h-3/4 rounded-full border border-cyan-800/30"></div>
+        <div className="absolute w-1/2 h-1/2 rounded-full border border-cyan-800/40"></div>
+        <div className="absolute w-1/4 h-1/4 rounded-full border border-cyan-800/50"></div>
+        
+        {/* Crosshair Grids */}
+        <div className="absolute inset-x-0 top-1/2 h-px bg-cyan-800/30"></div>
+        <div className="absolute inset-y-0 left-1/2 w-px bg-cyan-800/30"></div>
+
+        {/* Rotating Radar Sweep Cone (GIF-like continuous 360 sweep) */}
+        <div className="absolute inset-0 animate-radar-sweep pointer-events-none">
+          <div className="w-1/2 h-1/2 bg-gradient-to-br from-cyan-400/30 via-cyan-500/10 to-transparent rounded-tl-full origin-bottom-right"></div>
+          {/* Leading beam line */}
+          <div className="absolute top-0 right-1/2 w-0.5 h-1/2 bg-cyan-300 shadow-[0_0_8px_#22d3ee]"></div>
+        </div>
+
+        {/* Pinging Gap Blip 1: Bottleneck */}
+        <div className="absolute top-[28%] right-[25%] flex items-center justify-center">
+          <span className="w-3 h-3 rounded-full bg-red-500/40 animate-radar-ping absolute"></span>
+          <span className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_6px_#ef4444]"></span>
+          <span className="absolute left-3 top-0 text-[8px] font-mono text-red-400 font-bold whitespace-nowrap bg-black/60 px-1 rounded">
+            GAP 01
+          </span>
+        </div>
+
+        {/* Pinging Gap Blip 2: Race Condition */}
+        <div className="absolute bottom-[30%] left-[28%] flex items-center justify-center">
+          <span className="w-3 h-3 rounded-full bg-amber-500/40 animate-radar-ping [animation-delay:0.9s] absolute"></span>
+          <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_6px_#f59e0b]"></span>
+          <span className="absolute right-3 top-0 text-[8px] font-mono text-amber-300 font-bold whitespace-nowrap bg-black/60 px-1 rounded">
+            GAP 02
+          </span>
+        </div>
+
+        {/* Pinging Gap Blip 3: Security Risk */}
+        <div className="absolute top-[35%] left-[22%] flex items-center justify-center">
+          <span className="w-3 h-3 rounded-full bg-red-500/40 animate-radar-ping [animation-delay:1.5s] absolute"></span>
+          <span className="w-2 h-2 rounded-full bg-red-400 shadow-[0_0_6px_#ef4444]"></span>
+          <span className="absolute left-3 -top-2 text-[8px] font-mono text-red-300 font-bold whitespace-nowrap bg-black/60 px-1 rounded">
+            RISK
+          </span>
+        </div>
+
+        {/* Radar Center Hub */}
+        <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee] z-10"></div>
+      </div>
+
+      {/* Detection Ticker */}
+      <div className="mt-3 p-2 bg-[#141A23] rounded-lg border border-[#232F3E] flex items-center justify-between text-[9px] font-mono">
+        <span className="text-gray-400">DETECTED: <strong className="text-red-400">7 ARCHITECTURAL GAPS</strong></span>
+        <span className="text-emerald-400 font-bold">STATUS: AUTO-SOLVED</span>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * GIF-LIKE MICRO-ANIMATION 3: Live Server Blade Cluster
+ * Features 3 server chassis blades, asynchronous blinking activity LEDs, and flowing fiber data packets.
+ */
+export const GifLikeServerCluster: React.FC<{ className?: string }> = ({ className = '' }) => {
+  return (
+    <div className={`relative bg-[#161B22] border border-[#30363D] rounded-2xl p-4 shadow-xl ${className}`}>
+      {/* Console Header */}
+      <div className="flex items-center justify-between pb-2.5 border-b border-[#30363D] text-[10px] font-mono">
+        <div className="flex items-center gap-2 text-gray-200">
+          <Server className="w-3.5 h-3.5 text-emerald-400" />
+          <span className="font-bold text-emerald-400 tracking-wider">HPA AUTONOMOUS CLUSTER</span>
+        </div>
+        <div className="flex items-center gap-2 text-gray-400 text-[9px]">
+          <span>UPTIME: 99.99%</span>
+          <span className="text-emerald-400 font-bold">p99: 42ms</span>
+        </div>
+      </div>
+
+      {/* Server Rack Blade Units */}
+      <div className="mt-3 space-y-2">
+        {/* Blade 1: Ingress / Gateway */}
+        <div className="p-2.5 bg-[#0D1117] border border-[#30363D] rounded-xl flex items-center justify-between relative overflow-hidden">
+          {/* Animated data packet traveling across blade (GIF-like data pulse) */}
+          <div className="absolute inset-y-0 w-12 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-data-flow pointer-events-none"></div>
+
+          <div className="flex items-center gap-2 z-10">
+            <div className="flex flex-col gap-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-led-fast"></span>
+            </div>
+            <div>
+              <div className="text-[10px] font-bold font-mono text-gray-200">BLADE 01: API GATEWAY (KONG)</div>
+              <div className="text-[8px] font-mono text-gray-400">Rate Limiter • SSL Offload • Auth Shield</div>
+            </div>
+          </div>
+          <span className="px-2 py-0.5 bg-cyan-900/40 text-cyan-300 border border-cyan-800/60 rounded font-mono text-[9px] font-bold z-10">
+            10,000 REQ/S
+          </span>
+        </div>
+
+        {/* Blade 2: Microservices Pods */}
+        <div className="p-2.5 bg-[#0D1117] border border-[#30363D] rounded-xl flex items-center justify-between relative overflow-hidden">
+          {/* Animated data packet traveling across blade */}
+          <div className="absolute inset-y-0 w-12 bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent animate-data-flow [animation-delay:0.6s] pointer-events-none"></div>
+
+          <div className="flex items-center gap-2 z-10">
+            <div className="flex flex-col gap-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-led-fast"></span>
+            </div>
+            <div>
+              <div className="text-[10px] font-bold font-mono text-gray-200">BLADE 02: K8S POD ENGINE</div>
+              <div className="text-[8px] font-mono text-gray-400">HPA 3 → 20 Pods • Checkout & Catalog</div>
+            </div>
+          </div>
+          <span className="px-2 py-0.5 bg-emerald-900/40 text-emerald-300 border border-emerald-800/60 rounded font-mono text-[9px] font-bold z-10">
+            REPLICAS: 8/20
+          </span>
+        </div>
+
+        {/* Blade 3: Distributed State & Database */}
+        <div className="p-2.5 bg-[#0D1117] border border-[#30363D] rounded-xl flex items-center justify-between relative overflow-hidden">
+          {/* Animated data packet traveling across blade */}
+          <div className="absolute inset-y-0 w-12 bg-gradient-to-r from-transparent via-[#E06D3B]/20 to-transparent animate-data-flow [animation-delay:1.1s] pointer-events-none"></div>
+
+          <div className="flex items-center gap-2 z-10">
+            <div className="flex flex-col gap-0.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-led-fast"></span>
+            </div>
+            <div>
+              <div className="text-[10px] font-bold font-mono text-gray-200">BLADE 03: POSTGRES + REDIS</div>
+              <div className="text-[8px] font-mono text-gray-400">Read Replica Pool • Distributed Lock</div>
+            </div>
+          </div>
+          <span className="px-2 py-0.5 bg-purple-900/40 text-purple-300 border border-purple-800/60 rounded font-mono text-[9px] font-bold z-10">
+            LATENCY: 4ms
+          </span>
+        </div>
+      </div>
+
+      {/* Cluster Status Footer */}
+      <div className="mt-2.5 flex items-center justify-between text-[9px] font-mono text-gray-400 pt-2 border-t border-[#30363D]">
+        <span>CONTAINER ENGINE: RUNNING</span>
+        <span className="text-emerald-400 font-bold">HEALTH: 100% HEALTHY</span>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * GIF-LIKE MICRO-ANIMATION 4: Security Shield with Orbital Rings
+ * Features central pulsing shield and double rotating orbital rings with zero-trust security particles.
+ */
+export const GifLikeSecurityShield: React.FC<{ className?: string }> = ({ className = '' }) => {
+  return (
+    <div className={`relative bg-gradient-to-br from-[#111827] to-[#1F2937] border border-gray-700 rounded-2xl p-4 shadow-xl flex flex-col items-center justify-center text-center overflow-hidden ${className}`}>
+      
+      {/* Orbital Shield Core */}
+      <div className="relative w-28 h-28 flex items-center justify-center my-2">
+        {/* Outer Orbital Ring 1 (GIF-like spinning orbit) */}
+        <div className="absolute inset-0 rounded-full border border-dashed border-[#E06D3B]/50 animate-orbit pointer-events-none">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#E06D3B] shadow-[0_0_8px_#E06D3B] absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        {/* Inner Orbital Ring 2 (Counter-spin) */}
+        <div className="absolute inset-3 rounded-full border border-dashed border-cyan-400/50 [animation:orbitSpin_6s_linear_infinite_reverse] pointer-events-none">
+          <div className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee] absolute -bottom-1 left-1/2 transform -translate-x-1/2"></div>
+        </div>
+
+        {/* Central Pulsing Security Shield Icon */}
+        <div className="relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#9C381E] to-[#E06D3B] flex items-center justify-center shadow-[0_0_20px_rgba(224,109,59,0.5)] animate-pulse-glow">
+          <Shield className="w-7 h-7 text-white" />
+          <Lock className="w-3.5 h-3.5 text-white absolute -bottom-1 -right-1 bg-[#1E232A] rounded-full p-0.5" />
+        </div>
+      </div>
+
+      <div className="mt-1 space-y-1">
+        <div className="text-xs font-bold text-white font-['Space_Grotesk']">
+          Zero-Trust Security Perimeter
+        </div>
+        <div className="text-[10px] text-gray-400 font-mono">
+          AES-256 GCM • TLS 1.3 • PCI-DSS Compliant
+        </div>
+      </div>
+
+      {/* Security Specs Grid */}
+      <div className="mt-3 grid grid-cols-2 gap-1.5 w-full text-[9px] font-mono text-gray-300">
+        <div className="p-1.5 bg-black/40 rounded border border-gray-700/60 flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+          <span>PII Encrypted</span>
+        </div>
+        <div className="p-1.5 bg-black/40 rounded border border-gray-700/60 flex items-center gap-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-led-slow"></span>
+          <span>Zero Plaintext</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+

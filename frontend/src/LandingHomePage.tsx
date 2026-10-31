@@ -3,7 +3,13 @@ import {
   Sparkles, UploadCloud, FileText, ArrowRight, Zap, CheckCircle2, 
   Layers, Cpu, Shield, RefreshCw, Clock, ArrowUpRight, Check, AlertTriangle
 } from 'lucide-react';
-import { VisualDocumentProcessing } from './VisualStoryComponents';
+import { 
+  VisualDocumentProcessing, 
+  GifLikeDocumentScanner, 
+  GifLikeRadarGapDetector, 
+  GifLikeServerCluster, 
+  GifLikeSecurityShield 
+} from './VisualStoryComponents';
 
 interface LandingHomePageProps {
   onStartAnalysis: (projectName: string, projectDesc: string, reqText: string, files: File[]) => Promise<void>;
@@ -161,6 +167,9 @@ export const LandingHomePage: React.FC<LandingHomePageProps> = ({
           {/* Document Intelligence Ingestion Visual */}
           <VisualDocumentProcessing />
 
+          {/* GIF-Like Live Laser Document Scanner */}
+          <GifLikeDocumentScanner isScanning={isAnalyzing || requirementsText.length > 0 || uploadedFiles.length > 0} />
+
           {/* Text Input Area */}
           {inputMode === 'text' && (
             <div className="space-y-2">
@@ -275,6 +284,28 @@ export const LandingHomePage: React.FC<LandingHomePageProps> = ({
             </button>
           </div>
         </form>
+      </div>
+
+      {/* 🚀 REAL-TIME ARCHITECTURE INTELLIGENCE TELEMETRY (GIF-LIKE MICRO-ANIMATIONS) */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <h3 className="text-sm font-extrabold text-[#1E232A] uppercase tracking-wider font-['Space_Grotesk']">
+              Live Architecture Intelligence Telemetry
+            </h3>
+          </div>
+          <span className="text-[11px] font-mono text-[#716C5F]">Autonomous 360° Inspection Engine</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <GifLikeRadarGapDetector />
+          <GifLikeServerCluster />
+          <GifLikeSecurityShield />
+        </div>
       </div>
 
       {/* Autonomous Pipeline Stages Preview */}
