@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 NEXORA AI - Official Hackathon Presentation Generator (10 Slides)
-Generates NEXORA_AI_Presentation.pptx under presentation/
+Generates NEXORA_AI_Presentation.pptx under presentations/
 """
 
 import os
@@ -12,8 +12,8 @@ from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
 
 def build_presentation():
-    os.makedirs("presentation", exist_ok=True)
-    output_path = os.path.join("presentation", "NEXORA_AI_Presentation.pptx")
+    os.makedirs("presentations", exist_ok=True)
+    output_path = os.path.join("presentations", "NEXORA_AI_Presentation.pptx")
 
     prs = Presentation()
     prs.slide_width = Inches(13.333)

@@ -198,8 +198,9 @@ NEXORA-AI/
 ├── .gitignore                       # Git exclusion rules (secrets, venv, node_modules)
 ├── README.md                        # Project documentation & hackathon guide
 ├── docker-compose.yml               # Multi-container Docker deployment specification
-├── presentation/                    # Official Hackathon Presentation
-│   └── NEXORA_AI_Presentation.pptx  # 10-Slide presentation deck
+├── presentations/                   # Official Hackathon Presentations
+│   ├── NEXORA_AI_Presentation.pptx  # 10-Slide presentation deck
+│   └── NEXORA_AI_Architecture_Platform_Presentation.pptx
 ├── docs/                            # Additional technical documentation
 │   └── PRESENTATION_SLIDES.md       # Slide transcript and notes
 ├── scripts/                         # Build and presentation scripts
@@ -369,7 +370,7 @@ Once autonomous analysis completes:
 ## 15. Presentation & Documentation
 
 The official TCS AI Engineering Hackathon presentation is provided in the repository:
-- **File**: `presentation/NEXORA_AI_Presentation.pptx`
+- **File**: `presentations/NEXORA_AI_Presentation.pptx`
 - **Slides**:
   1. Title – NEXORA AI
   2. Problem Statement (Enterprise Requirements Crisis)
